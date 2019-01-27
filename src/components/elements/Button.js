@@ -10,6 +10,7 @@ export default styled.button`
   outline: none;
   background-color: transparent;
   font-weight: 700;
+  text-transform: uppercase;
   cursor: pointer;
   width: ${props => props.width};
 

@@ -31,4 +31,8 @@ const CardWrapper = styled.div`
   h4 {
     color: ${black};
   }
+
+  & > *:not(:first-child) {
+    margin-top: 2rem;
+  }
 `;

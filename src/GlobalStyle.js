@@ -6,14 +6,19 @@ import { textColor } from './utilities';
 const GlobalStyle = createGlobalStyle`
 ${normalize()};
 
+  *,
+  *::after,
+  *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+  
   html {
     box-sizing: border-box;
     font-size: 62.5%;
   }
 
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
 
   body {
     margin: 0;

@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import Container from './Container';
-import FeatureCard from '../components/FeatureCard';
+import SectionTitle from '../components/elements/SectionTitle';
+import ProductCard from '../components/ProductCard';
+import Button from '../components/elements/Button';
 
 export default class PopularProduct extends Component {
   render() {
     return (
       <PopularProductWrapper>
-        <Container flex>
-          <FeatureCard />
-          <FeatureCard />
-          <FeatureCard />
-        </Container>
+        <SectionTitle title="Popular products" />
+        <ProductCardWrapper>
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </ProductCardWrapper>
+        <Button>Explore more</Button>
       </PopularProductWrapper>
     );
   }
@@ -20,5 +24,19 @@ export default class PopularProduct extends Component {
 
 const PopularProductWrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 10rem 0;
+  & > :not(:last-child) {
+    margin-bottom: 10rem;
+  }
+`;
+
+const ProductCardWrapper = styled.div`
+  display: flex;
+  align-items: center;
+
+  & > :not(:first-child) {
+    margin-left: 5rem;
+  }
 `;

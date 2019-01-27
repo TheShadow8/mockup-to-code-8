@@ -102,6 +102,47 @@ export default class Icon extends Component {
             </g>
           </svg>
         );
+      case 'star-full':
+        return (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <g className="nc-icon-wrapper" stroke="none" fill="#111111">
+              <path
+                fill="#111111"
+                d="M12.712,1.942l2.969,6.015l6.638,0.965c0.651,0.095,0.911,0.895,0.44,1.354l-4.804,4.682l1.134,6.612 c0.111,0.649-0.57,1.143-1.152,0.837L12,19.286l-5.938,3.122C5.48,22.714,4.799,22.219,4.91,21.57l1.134-6.612l-4.804-4.682 c-0.471-0.459-0.211-1.26,0.44-1.354l6.638-0.965l2.969-6.015C11.579,1.352,12.421,1.352,12.712,1.942z"
+              />
+            </g>
+          </svg>
+        );
+      case 'star-empty':
+        return (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <g
+              className="nc-icon-wrapper"
+              strokeLinecap="square"
+              strokeLinejoin="miter"
+              strokeWidth="2"
+              fill="#111111"
+              stroke="#111111"
+            >
+              <polygon
+                fill="none"
+                stroke="#111111"
+                strokeMiterlimit="10"
+                points="12,2.49 15.09,8.75 22,9.754 17,14.628 18.18,21.51 12,18.262 5.82,21.51 7,14.628 2,9.754 8.91,8.75 "
+              />
+            </g>
+          </svg>
+        );
       default:
         return null;
     }

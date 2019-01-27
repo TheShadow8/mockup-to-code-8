@@ -4,6 +4,7 @@ import GlobalStyled from './GlobalStyle';
 import Hero from './Layouts/Hero';
 import Navbar from './Layouts/Navbar';
 import PopularProduct from './Layouts/PopularProduct';
+import Feature from './Layouts/Feature';
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <GlobalStyled />
         <Navbar />
         <Hero />
+        <Feature />
         <PopularProduct />
       </div>
     );
