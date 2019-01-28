@@ -15,18 +15,18 @@ export default class ScrollPoint extends Component {
   };
 
   render() {
-    const children = React.Children.map(this.props.children, child => {
-      return React.cloneElement(child, {
-        display: this.state.display
-      });
-    });
-    return (
+    const { children } = this.props;
+
+    const togglePoint = (
       <Waypoint
         onEnter={this.onScrollPointEnter}
         onLeave={this.onScrollPointLeave}
-      >
-        <div>{children}</div>
-      </Waypoint>
+      />
     );
+
+    return children({
+      display: this.state.display,
+      togglePoint: togglePoint
+    });
   }
 }

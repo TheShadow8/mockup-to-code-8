@@ -35,7 +35,12 @@ export default class ProductCardList extends Component {
       </Trail>
     ) : null;
 
-    return <ProductCardListWrapper>{products}</ProductCardListWrapper>;
+    return (
+      <ProductCardListWrapper>
+        {products}
+        {this.props.children}
+      </ProductCardListWrapper>
+    );
   }
 }
 

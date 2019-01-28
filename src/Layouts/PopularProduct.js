@@ -31,7 +31,11 @@ export default class PopularProduct extends Component {
       <PopularProductWrapper>
         <SectionTitle title="Popular products" />
         <ScrollPoint>
-          <ProductCardList items={items} />
+          {({ display, togglePoint }) => (
+            <ProductCardList items={items} display={display}>
+              {togglePoint}
+            </ProductCardList>
+          )}
         </ScrollPoint>
         <Button>Explore more</Button>
       </PopularProductWrapper>
