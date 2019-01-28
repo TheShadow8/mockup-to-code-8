@@ -15,8 +15,6 @@ class App extends Component {
         <Hero />
         <Feature />
         <PopularProduct />
-        <Hero />
-        <Hero />
       </div>
     );
   }
