@@ -1,25 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { Trail } from 'react-spring';
-import Waypoint from 'react-waypoint';
 
+import { ScrollPoint } from '../utilities';
 import SectionTitle from '../components/elements/SectionTitle';
-import ProductCard from '../components/ProductCard';
 import Button from '../components/elements/Button';
+import ProductCardList from '../components/ProductCardList';
 
 export default class PopularProduct extends Component {
-  state = {
-    display: false
-  };
-
-  handleWaypointEnter = () => {
-    this.setState({ display: true });
-  };
-
-  handleWaypointLeave = () => {
-    this.setState({ display: false });
-  };
-
   render() {
     const items = [
       {
@@ -40,33 +27,12 @@ export default class PopularProduct extends Component {
       }
     ];
 
-    const products = this.state.display ? (
-      <Trail
-        items={items}
-        keys={item => item.id}
-        from={{ transform: 'translate3d(-10rem, -8rem, 0)' }}
-        to={{ transform: 'translate3d(0,0,0)' }}
-        config={{ duration: 800, delay: 100 }}
-      >
-        {item => props => (
-          <div style={props}>
-            <ProductCard title={item.title} />
-          </div>
-        )}
-      </Trail>
-    ) : null;
     return (
       <PopularProductWrapper>
         <SectionTitle title="Popular products" />
-        <Waypoint
-          onEnter={this.handleWaypointEnter}
-          onLeave={this.handleWaypointLeave}
-        >
-          <div>
-            <ProductCardWrapper>{products}</ProductCardWrapper>
-          </div>
-        </Waypoint>
-
+        <ScrollPoint>
+          <ProductCardList items={items} />
+        </ScrollPoint>
         <Button>Explore more</Button>
       </PopularProductWrapper>
     );
@@ -80,14 +46,5 @@ const PopularProductWrapper = styled.div`
   margin: 10rem 0;
   & > :not(:last-child) {
     margin-bottom: 10rem;
-  }
-`;
-
-const ProductCardWrapper = styled.div`
-  display: flex;
-  align-items: center;
-
-  & > :not(:first-child) {
-    margin-left: 2rem;
   }
 `;

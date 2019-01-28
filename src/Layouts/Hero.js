@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Spring } from 'react-spring';
 
 import { bgHeroColor, black } from '../utilities';
 import Button from '../components/elements/Button';
@@ -8,29 +9,37 @@ import Image from '../components/elements/Image';
 export default class Hero extends Component {
   render() {
     return (
-      <HeroWrapper>
-        <HeroImageWrapper>
-          <Image width="450" imgUrl="img/hero.jpg" />
-        </HeroImageWrapper>
+      <Spring
+        from={{ opacity: 0 }}
+        to={{ opacity: 1 }}
+        config={{ duration: 1200 }}
+      >
+        {props => (
+          <HeroWrapper style={props}>
+            <HeroImageWrapper>
+              <Image width="450" imgUrl="img/hero.jpg" />
+            </HeroImageWrapper>
 
-        <HeroContentWrapper>
-          <HeroContent>
-            <h4>TRENDING COLLECTION</h4>
-            <h1>BRAND WATCH</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              rhoncus eros sed sem egestas fermentum. Nullam cursus vehicula
-              arcu, sed rutrum ante finibus eu. Praesent a quam sem. Donec sed
-              vestibulum ligula. Mauris in tempor turpis. Aenean vel nisl
-              mattis, consectetur sapien non, efficitur risus.
-            </p>
-            <div>
-              Price: <span>$220</span>
-            </div>
-            <Button width="20rem">SHOP NOW</Button>
-          </HeroContent>
-        </HeroContentWrapper>
-      </HeroWrapper>
+            <HeroContentWrapper>
+              <HeroContent>
+                <h4>TRENDING COLLECTION</h4>
+                <h1>BRAND WATCH</h1>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                  rhoncus eros sed sem egestas fermentum. Nullam cursus vehicula
+                  arcu, sed rutrum ante finibus eu. Praesent a quam sem. Donec
+                  sed vestibulum ligula. Mauris in tempor turpis. Aenean vel
+                  nisl mattis, consectetur sapien non, efficitur risus.
+                </p>
+                <div>
+                  Price: <span>$220</span>
+                </div>
+                <Button width="20rem">SHOP NOW</Button>
+              </HeroContent>
+            </HeroContentWrapper>
+          </HeroWrapper>
+        )}
+      </Spring>
     );
   }
 }
