@@ -3,13 +3,14 @@ import styled from 'styled-components';
 
 import { bgHeroColor, black } from '../utilities';
 import Button from '../components/elements/Button';
+import Image from '../components/elements/Image';
 
 export default class Hero extends Component {
   render() {
     return (
       <HeroWrapper>
         <HeroImageWrapper>
-          <img alt="" src="img/hero.jpg" />
+          <Image width="450" imgUrl="img/hero.jpg" />
         </HeroImageWrapper>
 
         <HeroContentWrapper>
@@ -45,9 +46,7 @@ const HeroImageWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
 
-  img {
-    height: 100%;
-    width: 45rem;
+  & > * {
     margin-right: 5rem;
   }
 `;

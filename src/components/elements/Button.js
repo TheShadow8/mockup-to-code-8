@@ -11,8 +11,10 @@ export default styled.button`
   background-color: transparent;
   font-weight: 700;
   text-transform: uppercase;
+  text-align: center;
   cursor: pointer;
   width: ${props => props.width};
+  transition: all 0.5s ease-in-out;
 
   &:hover {
     background-color: ${black};
